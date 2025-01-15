@@ -9,7 +9,9 @@ from tkinter import Label
 def criar_interface(diretorio_atual):
     root = tk.Tk()
     root.title("Gerador de QR Code")
-    root.geometry("500x650")
+    largura, altura = 500, 650
+    pos_x, pos_y = 0, 0
+    root.geometry(f"{largura}x{altura}+{pos_x}+{pos_y}")
     root.resizable(False, False)
 
     label_instrucoes = ttk.Label(root, text="Digite o link ou texto:")
