@@ -3,7 +3,7 @@ from PIL import Image, ImageTk
 from tkinter import messagebox
 from datetime import datetime
 
-def gerar_qrcode(entrada, entrada_caminho, label_preview):
+def gerar_qrcode(entrada, entrada_caminho, qrcode_preview):
     texto = entrada.get()
     caminho_salvar = entrada_caminho.get()
     
@@ -31,8 +31,8 @@ def gerar_qrcode(entrada, entrada_caminho, label_preview):
 
         # Exibir a imagem no Tkinter
         img_tk = ImageTk.PhotoImage(img)
-        label_preview.config(image=img_tk)
-        label_preview.image = img_tk
+        qrcode_preview.config(image=img_tk)
+        qrcode_preview.image = img_tk        
 
         messagebox.showinfo("Sucesso", f"QR Code gerado e salvo em:\n{caminho_completo}")
     except Exception as e:
